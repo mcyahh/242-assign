@@ -62,8 +62,10 @@ int main(int argc, char **argv) {
     if (print_table) {
         htable_print(h, print);
     } else {
-        while (getword(word, sizeof word, dict) != EOF) {
-            /* do something */
+        while (getword(word, sizeof word, stdin) != EOF) {
+            if (!htable_search(h, word)) {
+                printf("%s\n", word);
+            }
         }
     }
 
