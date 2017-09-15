@@ -42,7 +42,7 @@ void container_add(container c, char *str) {
  * Checks if a string is in a container.
  *
  * @param str is the string being searched for.
- * @return 0 if the string is not in the container, anything else if it is.
+ * @return zero if the string is not in the container, non-zero if it is.
  */
 int container_search(container c, char *word) {
     return c->type == RED_BLACK_TREE ? rbt_search(c->contents, word) :
@@ -53,9 +53,9 @@ int container_search(container c, char *word) {
  * Prints the contents of the container.
  *
  * @param c the container that is to be printed.
- * @param word is the action to be taken on each item in the container.
+ * @param f the function that to be taken on each item in the container.
  */
-void container_print(container c, void f(char *word)) {
+void container_print(container c, void f(char *str)) {
     if (c->type == RED_BLACK_TREE) {
         rbt_preorder(c->contents, f);
     } else {
@@ -64,12 +64,11 @@ void container_print(container c, void f(char *word)) {
 }
 
 /**
- * Removess a string from a container.
+ * Removes a string from a container.
  *
  * @param c the container that the string will be removed from.
  * @param str is the string that is to be removed.
  */
-/* Not yet implimented */
 void container_remove(container c, char *str) {
     if (c->type == FLEX_ARRAY) {
     } else {

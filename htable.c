@@ -14,16 +14,14 @@ struct htablerec {
     container_t type;
 };
 
-htable htable_new(int capacity) {
+htable htable_new(int capacity, char type) {
     int i;
 
-    printf("1st alloc\n");
     htable result = emalloc(sizeof *result);
-    result->capacity = capacity == -1 ? DEFAULT_SIZE : capacity;
+    result->capacity = capacity < 1 ? DEFAULT_SIZE : capacity;
     result->num_keys = 0;
-    printf("2nd alloc\n");
-    result->keys = emalloc(capacity * sizeof result->keys[0]);
-    result->type = RED_BLACK_TREE;
+    result->keys = emalloc(result->capacity * sizeof result->keys[0]);
+    result->type = type == 'f' ? FLEX_ARRAY : RED_BLACK_TREE;
 
     for (i = 0; i < capacity; i++) {        
         result->keys[i] = NULL;
@@ -73,7 +71,9 @@ void htable_print(htable h, void f(char *str)) {
 
     for (i = 0; i < h->capacity; i++) {
         if (h->keys[i] != NULL) {
+            printf("%d ", i);
             container_print(h->keys[i], f);
+            printf("\n");
         }
     }
 }
@@ -82,7 +82,9 @@ void htable_free(htable h) {
     int i;
     
     for (i = 0; i < h->capacity; i++) {
-        container_free(h->keys[i]);
+        if (h->keys[i] != NULL) {
+            container_free(h->keys[i]);
+        }
     }
 
     free(h->keys);
