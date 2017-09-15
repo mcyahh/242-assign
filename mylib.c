@@ -11,6 +11,8 @@
  * @author Nick Greene
  * @author Connor McIntyre
  * @author Connor Duncan
+ *
+ * A few methods that will be used by multiple classes.
  */
 
 /**

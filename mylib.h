@@ -8,6 +8,8 @@
  * @author Nick Greene
  * @author Connor McIntyre
  * @author Connor Duncan
+ *
+ * Defines a few methods that are mostly for conveience.
  */
 
 #include <stddef.h>
