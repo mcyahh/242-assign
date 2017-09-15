@@ -63,7 +63,11 @@ void htable_insert(htable h, char *str) {
 
 
 int htable_search(htable h, char *str) {
-    return container_search(h->keys[hash_function(h, str)], str);
+    int i = hash_function(h, str);
+    if (h->keys[i] == NULL) {
+        return 0;
+    }
+    return container_search(h->keys[i], str);
 }
 
 void htable_print(htable h, void f(char *str)) {
