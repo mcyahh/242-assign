@@ -9,6 +9,8 @@
  * Group 28
  * @author Nick Greene
  * @author Connor McIntyre
+ *
+ * Holds all the method and structures for the Hash Table.
  */
 
 #define DEFAULT_SIZE 3877

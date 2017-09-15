@@ -5,6 +5,8 @@
  * Group 28
  * @author Nick Greene
  * @author Connor McIntyre
+ *
+ * Defines all the callable methods for use with the hash table.
  */
 
 /**
