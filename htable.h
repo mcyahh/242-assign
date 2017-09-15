@@ -2,6 +2,8 @@
 #define HTABLE_H_
 
 /**
+ * htable.h
+ *
  * Group 28
  * @author Nick Greene
  * @author Connor McIntyre

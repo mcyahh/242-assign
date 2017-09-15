@@ -2,7 +2,7 @@
 #define CONTAINER_H_
 
 /**
- * container.c
+ * container.h
  *
  * Group 28
  * @author Nick Greene
