@@ -45,6 +45,9 @@ void container_add(container c, char *str) {
  * @return zero if the string is not in the container, non-zero if it is.
  */
 int container_search(container c, char *word) {
+    if (c == NULL) {
+        return 0;
+    }
     return c->type == RED_BLACK_TREE ? rbt_search(c->contents, word) :
         is_present(c->contents, word);
 }
