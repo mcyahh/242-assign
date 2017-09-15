@@ -5,6 +5,15 @@
 #include "mylib.h"
 
 /**
+ * mylib.c
+ *
+ * Group 28
+ * @author Nick Greene
+ * @author Connor McIntyre
+ * @author Connor Duncan
+ */
+
+/**
  * Allocates the requested memory and returns a pointer to it.
  *
  * @param s is the size of the memory block, in bytes.
