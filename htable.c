@@ -114,7 +114,7 @@ int htable_search(htable h, char *str) {
  * @param str the fuction to call on.
  */
 void htable_print(htable h, void f(char *str)) {
-    int i;
+    unsigned int i;
 
     for (i = 0; i < h->capacity; i++) {
         if (h->keys[i] != NULL) {
@@ -131,7 +131,7 @@ void htable_print(htable h, void f(char *str)) {
  * @param h is the hash table being unallocated.
  */
 void htable_free(htable h) {
-    int i;
+    unsigned int i;
     
     for (i = 0; i < h->capacity; i++) {
         if (h->keys[i] != NULL) {
