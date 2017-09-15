@@ -37,6 +37,7 @@ container container_new(container_t type) {
     } else {
         result->contents = rbt_new();
     }
+    return result;
 }
 
 /**
