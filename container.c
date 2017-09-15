@@ -5,9 +5,23 @@
 #include"rbt.h"
 #include"container.h"
 
+/**
+ * container.c
+ *
+ * Group 28
+ * @author Nick Greene
+ * @author Connor McIntyre
+ * @author Connor Duncan
+ *
+ * Acts a a wrapper for either a red-black tree or a flexarray.
+ */
+
+/**
+ * Defines the container.
+ */
 struct containerrec {
-    container_t type;
-    void *contents;
+    container_t type; /* Defines what the container is acting as a wrapper for*/
+    void *contents; /* Holds the structure that the container contains.*/
 };
 
 /**
@@ -38,6 +52,7 @@ void container_add(container c, char *str) {
         c->contents = rbt_insert(c->contents, str);
     }
 }
+
 /**
  * Checks if a string is in a container.
  *
@@ -53,7 +68,7 @@ int container_search(container c, char *word) {
 }
 
 /**
- * Prints the contents of the container.
+ * Calls a give function on the contents of the container.
  *
  * @param c the container that is to be printed.
  * @param f the function that to be taken on each item in the container.
@@ -63,18 +78,6 @@ void container_print(container c, void f(char *str)) {
         rbt_preorder(c->contents, f);
     } else {
         visit(c->contents, f);
-    }
-}
-
-/**
- * Removes a string from a container.
- *
- * @param c the container that the string will be removed from.
- * @param str is the string that is to be removed.
- */
-void container_remove(container c, char *str) {
-    if (c->type == FLEX_ARRAY) {
-    } else {
     }
 }
 
