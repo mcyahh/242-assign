@@ -51,6 +51,10 @@ int main(int argc, char **argv) {
     clock_t search_start, search_end; /* Stores the time is takes to search */
     int unknown = 0; /* A count of the words not found in the hash table */
 
+    if (argc == 1) { /* No options or files */
+        return EXIT_FAILURE;
+    }
+
     while ((option = getopt(argc, argv, optstring)) != EOF) {
         switch (option) {
             case 'r':
