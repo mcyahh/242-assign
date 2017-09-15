@@ -60,19 +60,6 @@ void flexarray_append(flexarray f, char *item) {
 }
 
 /**
- * Prints all the items in a given flexarray in the order they are in the array.
- *
- * @param f is the flexarray that is to be printed.
- */
-void flexarray_print(flexarray f) {
-    int i;
-
-    for (i = 0; i < f->itemcount; i++) {
-        printf("%s\n", f->items[i]);
-    }
-}
-
-/**
  * A sorting algorithm to sort the items in a flexarray.
  * Can also be used on any array of char arrays.
  * Uses insertion sort.

@@ -41,13 +41,6 @@ extern void      flexarray_free(flexarray f);
 extern flexarray flexarray_new();
 
 /**
- * Prints all the items in a given flexarray in the order they are in the array.
- *
- * @param f is the flexarray that is to be printed.
- */
-extern void      flexarray_print(flexarray f);
-
-/**
  * Calls a sorting function on a given flexarray.
  * The flexarray will be sorted.
  *
