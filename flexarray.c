@@ -4,10 +4,24 @@
 #include "mylib.h"
 #include "flexarray.h"
 
+/**
+ * flexarray.c
+ *
+ * Group 28
+ * @author Nick Greene
+ * @author Connor McIntyre
+ * @author Connor Duncan
+ *
+ * Holds the methods and structure that are used when dealing with flxarrays.
+ */
+
+/**
+ * The flexarray structure.
+ */
 struct flexarrayrec {
-    int capacity;
-    int itemcount;
-    char **items;
+    int capacity; /* The current capacity of the flexarray.*/
+    int itemcount; /* The number of items currently in the flexarray.*/
+    char **items; /* An array that holds all the items in the flexarray.*/
 };
 
 /**
