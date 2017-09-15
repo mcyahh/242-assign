@@ -52,7 +52,7 @@ int main(int argc, char **argv) {
     int unknown = 0; /* A count of the words not found in the hash table */
 
     if (argc == 1) { /* No options or files */
-        fprintf(stderr, "No valid option choosen, run with -h for help")
+        fprintf(stderr, "No valid option choosen, run with -h for help\n")
         return EXIT_FAILURE;
     }
 
